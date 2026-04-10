@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](#)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://algorithmaze.vercel.app)
 
-[🚀 Live Demo](https://algorithmaze.vercel.app) · [Report Bug](#) · [Request Feature](#)
+[🚀 Live Demo](https://algorithmaze.vercel.app) 
 
 </div>
 
