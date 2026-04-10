@@ -1,7 +1,3 @@
-<div align="center">
-
-<img src="public/icons.svg" alt="Algorithmaze Logo" width="72" />
-
 # Algorithmaze
 
 **An interactive algorithm recommendation and visualization tool for learners, students, and interview preppers.**
