@@ -1,203 +1,81 @@
+<div align="center">
+
+<img src="public/icons.svg" alt="Algorithmaze Logo" width="72" />
+
 # Algorithmaze
 
-Algorithmaze is an interactive algorithm recommendation and visualization web app.  
-It helps learners choose the right algorithm for a problem type, understand *why* it is selected, compare complexity, simulate behavior step-by-step, and view reference code.
+**An interactive algorithm recommendation and visualization tool for learners, students, and interview preppers.**
+
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-green)](#)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://algorithmaze.vercel.app)
+
+[🚀 Live Demo](https://algorithmaze.vercel.app) · [Report Bug](#) · [Request Feature](#)
+
+</div>
 
 ---
 
-## What This Project Does
+## What is Algorithmaze?
 
-Algorithmaze guides users through a small decision questionnaire and maps answers to a suitable algorithm or data structure technique.  
-After selection, the app provides:
+Most algorithm tools assume you already know what to look for. Algorithmaze flips that — you describe your problem, and it guides you to the right algorithm or data structure, explains *why*, shows you how it behaves step by step, and hands you reference code.
 
-- A plain-language overview
-- A decision flow explanation
-- Time/space complexity comparison
-- Interactive visual simulation
-- Syntax-highlighted code snippet
+Whether you're cramming for interviews or building intuition from scratch, Algorithmaze makes abstract CS concepts concrete.
 
-This makes it useful for students, interview prep, and quick algorithm intuition-building.
+---
+
+## Features
+
+- **Problem-driven recommendations** — answer a short questionnaire, get the right algorithm matched to your problem
+- **Decision flow reasoning** — see exactly *why* an algorithm was chosen, not just *what*
+- **Complexity analysis** — interactive charts and comparison tables for time/space complexity
+- **Step-by-step visualizer** — play, pause, replay, and reset algorithm simulations
+- **Syntax-highlighted code** — reference implementations for every supported algorithm
+- **Broad coverage** — searching, sorting, graphs, trees, string matching, data structures, and hashing
+
+---
+
+## Algorithms Covered
+
+| Category | Algorithms / Techniques |
+|---|---|
+| **Searching** | Binary Search, Linear Search |
+| **Sorting** | Quick Sort, Merge Sort, Insertion Sort, Selection Sort |
+| **Graph** | BFS, DFS, Dijkstra, Bellman-Ford |
+| **String Matching** | Naive, KMP |
+| **Data Structures** | Stack, Queue, Linked List |
+| **Tree** | Traversals, Find Min/Max (BST), Find Kth Min/Max |
+| **Hashing** | Linear Probing, Quadratic Probing, Double Hashing, Random Probing, Rehashing |
 
 ---
 
 ## Tech Stack
 
-### Frontend
-- **React 19** (component-driven UI)
-- **Vite 8** (fast dev server and build pipeline)
-- **JavaScript + JSX** (ES modules)
-
-### Styling and UI
-- **Tailwind CSS 4**
-- **PostCSS + Autoprefixer**
-- **Framer Motion** (animations/transitions)
-- **Lucide React** (icons)
-
-### Data Visualization and Code Display
-- **Recharts** (complexity charts)
-- **react-syntax-highlighter** (code view)
-
-### Tooling
-- **ESLint 9** (code quality)
-- **gh-pages** (deployment to GitHub Pages)
-
----
-
-## Core Features
-
-- Problem-driven recommendation engine (`deduceAlgorithm`)
-- Coverage across:
-  - Searching
-  - Sorting
-  - Graph
-  - String Matching
-  - Data Structures
-  - Tree Operations
-  - Hashing Techniques
-- Step playback controls (play, pause, replay, reset)
-- Tabbed learning layout:
-  - Overview
-  - Decision Flow
-  - Complexity
-  - Visualizer
-  - Code
-
----
-
-## Supported Algorithms and Techniques
-
-### Searching
-- Binary Search
-- Linear Search
-
-### Sorting
-- Quick Sort
-- Merge Sort
-- Insertion Sort
-- Selection Sort
-
-### Graph
-- BFS
-- DFS
-- Dijkstra
-- Bellman-Ford
-
-### String Matching
-- Naive String Matching
-- KMP
-
-### Data Structures
-- Stack
-- Queue
-- Linked List
-
-### Tree
-- Traversals
-- Find Minimum (BST)
-- Find Maximum (BST)
-- Find Kth Minimum
-- Find Kth Maximum
-
-### Hashing
-- Linear Probing
-- Quadratic Probing
-- Double Hashing
-- Random Probing
-- Rehashing
-
----
-
-## Project Structure
-
-```text
-Algorithmaze/
-|- public/
-|  |- icons.svg
-|- src/
-|  |- components/
-|  |  |- Navbar.jsx
-|  |  |- HeroSection.jsx
-|  |  |- ProblemSelector.jsx
-|  |  |- AlgorithmCard.jsx
-|  |  |- DecisionTree.jsx
-|  |  |- ComplexityChart.jsx
-|  |  |- ComplexityComparison.jsx
-|  |  |- Visualizer.jsx
-|  |  |- TreeTraversalVisualizer.jsx
-|  |  |- CodeBlock.jsx
-|  |- utils/
-|  |  |- algorithmData.js
-|  |- App.jsx
-|  |- main.jsx
-|  |- index.css
-|- index.html
-|- package.json
-|- vite.config.js
-|- tailwind.config.js
-|- postcss.config.js
-|- eslint.config.js
-```
-
----
-
-## Architecture Overview
-
-Algorithmaze follows a **single-page, component-based architecture** with a centralized algorithm knowledge base.
-
-```mermaid
-flowchart TD
-    A[User Input in ProblemSelector] --> B[deduceAlgorithm in algorithmData.js]
-    B --> C[Selected Algorithm Object]
-    C --> D[App State]
-    D --> E[AlgorithmCard - Overview]
-    D --> F[DecisionTree - Reasoning Path]
-    D --> G[ComplexityChart + Comparison]
-    D --> H[Visualizer - Step Simulation]
-    D --> I[CodeBlock - Reference Code]
-```
-
-### Main Module Responsibilities
-
-- `src/App.jsx`  
-  Orchestrates app layout, selected algorithm state, and tab switching.
-
-- `src/utils/algorithmData.js`  
-  Stores algorithm metadata (complexity, explanation, code, alternatives) and recommendation logic.
-
-- `src/components/ProblemSelector.jsx`  
-  Captures user intent through category-specific questions.
-
-- `src/components/Visualizer.jsx`  
-  Runs domain-specific simulations and playback controls.
-
-- `src/components/ComplexityChart.jsx` and `src/components/ComplexityComparison.jsx`  
-  Visual and tabular complexity comparisons.
-
-- `src/components/CodeBlock.jsx`  
-  Displays syntax-highlighted example code for the selected algorithm.
-
----
-
-## How Recommendation Works
-
-1. User chooses a problem category.
-2. User answers one focused question set.
-3. `deduceAlgorithm(problemType, answers)` maps responses to a best-fit algorithm.
-4. The selected algorithm object drives all tabs (overview, decision flow, complexity, visualizer, code).
-
-This keeps logic deterministic and easy to maintain/extend.
+| Layer | Technology |
+|---|---|
+| UI Framework | React 19 + Vite 8 |
+| Styling | Tailwind CSS 4, Framer Motion |
+| Charts | Recharts |
+| Code Display | react-syntax-highlighter |
+| Icons | Lucide React |
+| Deployment | GitHub Pages via gh-pages |
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (LTS recommended)
 - npm
 
 ### Installation
 
 ```bash
+git clone https://github.com/your-username/algorithmaze.git
+cd algorithmaze
 npm install
 ```
 
@@ -207,52 +85,108 @@ npm install
 npm run dev
 ```
 
-Open the local URL shown by Vite (usually `http://localhost:5173`).
+Open the URL shown by Vite (usually `http://localhost:5173`).
 
 ---
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Create production build
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint checks
-- `npm run deploy` - Build and publish `dist` via GitHub Pages
+```bash
+npm run dev       # Start development server
+npm run build     # Create production build
+npm run preview   # Preview production build locally
+npm run lint      # Run ESLint checks
+npm run deploy    # Build and publish to GitHub Pages
+```
+
+---
+
+## How It Works
+
+```
+User Input (ProblemSelector)
+        │
+        ▼
+deduceAlgorithm()  ←  algorithmData.js (knowledge base)
+        │
+        ▼
+Selected Algorithm Object
+        │
+   ┌────┴────────────────────────────────┐
+   ▼        ▼          ▼         ▼       ▼
+Overview  Decision  Complexity  Viz    Code
+          Flow      Chart
+```
+
+1. User picks a problem category and answers focused questions.
+2. `deduceAlgorithm(problemType, answers)` maps responses to the best-fit algorithm.
+3. The result drives all five tabs: **Overview**, **Decision Flow**, **Complexity**, **Visualizer**, and **Code**.
+
+Logic is deterministic and centralized in `src/utils/algorithmData.js`, making it easy to extend.
+
+---
+
+## Project Structure
+
+```
+Algorithmaze/
+├── public/
+│   └── icons.svg
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── ProblemSelector.jsx       # User questionnaire
+│   │   ├── AlgorithmCard.jsx         # Overview tab
+│   │   ├── DecisionTree.jsx          # Reasoning path tab
+│   │   ├── ComplexityChart.jsx       # Complexity visualization
+│   │   ├── ComplexityComparison.jsx  # Comparison table
+│   │   ├── Visualizer.jsx            # Step-by-step simulation
+│   │   ├── TreeTraversalVisualizer.jsx
+│   │   └── CodeBlock.jsx             # Syntax-highlighted code
+│   ├── utils/
+│   │   └── algorithmData.js          # Algorithm knowledge base + recommendation logic
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## Extending Algorithmaze
+
+To add a new algorithm:
+
+1. **Add its object** in `src/utils/algorithmData.js` (complexity, explanation, code, alternatives)
+2. **Extend `problemTypes`** in `ProblemSelector.jsx` if a new question option is needed
+3. **Update `deduceAlgorithm`** with the new mapping rule
+4. **Add simulation logic** in `src/components/Visualizer.jsx` for interactive playback
 
 ---
 
 ## Deployment
 
-This project includes `gh-pages` deployment support.
+This project deploys to GitHub Pages via the `gh-pages` package.
 
 ```bash
 npm run deploy
 ```
 
-It runs the build (`predeploy`) and publishes the `dist` folder to GitHub Pages.
-
----
-
-## Extending the Project
-
-To add a new algorithm:
-
-1. Add its object in `src/utils/algorithmData.js`
-2. Extend `problemTypes` question options if needed
-3. Update `deduceAlgorithm` mapping logic
-4. Add simulation handling in `src/components/Visualizer.jsx` (if interactive support is required)
-
----
-
-## Why This Design Works
-
-- **Beginner-friendly:** starts from problem intent instead of algorithm memorization
-- **Explainable:** every recommendation includes reasoning path and alternatives
-- **Interactive:** visual simulation makes abstract behavior concrete
-- **Modular:** algorithm knowledge and UI are clearly separated
+This runs the production build (`predeploy`) and publishes the `dist/` folder automatically.
 
 ---
 
 ## Author
 
 Designed and developed by **Krishna**.
+
+---
+
+<div align="center">
+
+If Algorithmaze helped you, consider giving it a ⭐ on GitHub!
+
+</div>
